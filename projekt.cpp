@@ -97,7 +97,7 @@ float do_simulation(std::vector<bool> layer, int q, float p, int N=5000){
 
 int main(int argc, char* argv[]){
   if(argc < 4){
-    std::cout<<"ERROR: use ./"<<argv[0]<<" <q> <N> <R> optional{<dp> <p_max> <p_min>}"<<std::endl;
+    std::cout<<"ERROR: use "<<argv[0]<<" <q> <N> <R> optional{<dp> <p_max> <p_min>}"<<std::endl;
     return -1;
   }
 
@@ -107,7 +107,7 @@ int main(int argc, char* argv[]){
 
   float p_min = 0;
   float p_max = 1.0;
-  float dp = 0.02;
+  float dp = 0.05;
   if(argc > 4) dp = atof(argv[4]);
   if(argc > 5) p_max = atof(argv[5]);
   if(argc > 6) p_min = atof(argv[6]);
