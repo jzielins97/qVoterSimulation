@@ -46,7 +46,7 @@ funkcja do wykonania wszystkoch kroków czasowych symulacji.
 float do_simulation(std::vector<bool> layer, int q, float p, int N=5000){
   float m_avg = 0; //średnia magnetyzacja
 
-  for(int it=0; it<N*1e3; it++){ //pętla po czasie (zakładamy po 5000 powtórzeń dla każdego węzła)
+  for(int it=0; it<N*1e3; it++){ //pętla po czasie (zakładamy po 1000 powtórzeń dla każdego węzła)
     int il = rand()%layer.size();
 
     //pierwszy poziom---------------------------------------------------------->
@@ -91,13 +91,13 @@ float do_simulation(std::vector<bool> layer, int q, float p, int N=5000){
     else m_avg -= 1;
   }
   m_avg = m_avg/layer.size();
-  return m_avg;
+  return abs(m_avg);
 }
 
 
 int main(int argc, char* argv[]){
   if(argc < 4){
-    std::cout<<"ERROR: use "<<argv[0]<<" <q> <N> <R> optional{<dp> <p_max> <p_min>}"<<std::endl;
+    std::cout<<"ERROR: use "<<argv[0]<<" <q> <N> <R> optional{<ratio> <dp> <p_max> <p_min>}"<<std::endl;
     return -1;
   }
 
@@ -108,9 +108,11 @@ int main(int argc, char* argv[]){
   float p_min = 0;
   float p_max = 1.0;
   float dp = 0.05;
-  if(argc > 4) dp = atof(argv[4]);
-  if(argc > 5) p_max = atof(argv[5]);
-  if(argc > 6) p_min = atof(argv[6]);
+  float ratio = 0.6;
+  if(argc > 4) ratio = atof(argv[4]);
+  if(argc > 5) dp = atof(argv[5]);
+  if(argc > 6) p_max = atof(argv[6]);
+  if(argc > 7) p_min = atof(argv[7]);
 
   //output stream set up
   char filename[100];
@@ -127,7 +129,7 @@ int main(int argc, char* argv[]){
       if(layer.size()>0) layer.clear();
       for(int i=0; i<N; i++){
         float r = 1.0*rand()/RAND_MAX;
-        if(r < 0.6) layer.push_back(true);
+        if(r < ratio) layer.push_back(true);
         else layer.push_back(false);
       }
 

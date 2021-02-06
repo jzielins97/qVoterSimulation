@@ -13,15 +13,12 @@ The program simulates the model on N voters with given q parameter. It does R si
 
 Compile the program by running: g++ project.cpp -o project
 
-To run: ./projekt <q> <N> <R> optional{<dp> <p_max> <p_min>}\
+To run: ./projekt <q> <N> <R> optional{<ratio> <dp> <p_max> <p_min>}\
 q - size of the lobby\
 N - number of voters\
 R - number of simulations to average\
+ratio - initial ration between states 1 and -1
 dp - a step for the noise\
 p_max - higher limit of the noise range\
 p_min - lower limit of the noise range\
 NOTE: p_max is given before p_min, because more often the user will want to limit only from the top.
-
-### Python (under development)
-The program is written in the jupyter-lab. It can be run directly inside the notebook. Simply run each cell by Shift+Enter.\
-In the end the graph is drawn of <m> vs p
