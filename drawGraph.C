@@ -138,7 +138,7 @@ void histereza(int q, float p_min = 0.0, float p_max = 0.7){
   int markerStyle2;
 
   TMultiGraph* mg = new TMultiGraph();
-  auto legend = new TLegend(0.8,0.9,0.95,0.75);
+  auto legend = new TLegend(0.65,0.9,0.95,0.75);
   TGraph* gr1;
   TGraph* gr2;
 
