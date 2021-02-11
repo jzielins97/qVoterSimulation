@@ -17,7 +17,7 @@ To run: ./projekt \<q\> \<N\> \<R\> optional{\<ratio\> \<dp\> \<p_max\> \<p_min\
 q - size of the lobby\
 N - number of voters\
 R - number of simulations to average\
-ratio - initial ration between states 1 and -1
+ratio - initial ration between states 1 and -1\
 dp - a step for the noise\
 p_max - higher limit of the noise range\
 p_min - lower limit of the noise range\
