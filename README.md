@@ -13,7 +13,7 @@ The program simulates the model on N voters with given q parameter. It does R si
 
 Compile the program by running: g++ project.cpp -o project
 
-To run: ./projekt <q> <N> <R> optional{<ratio> <dp> <p_max> <p_min>}\
+To run: ./projekt \<q\> \<N\> \<R\> optional{<ratio> <dp> <p_max> <p_min>}\
 q - size of the lobby\
 N - number of voters\
 R - number of simulations to average\
